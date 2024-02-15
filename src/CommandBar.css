@@ -1,0 +1,23 @@
+.commandBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+    color: black;
+    width: 100vw;
+    height: 5vh;
+}
+
+.createButton{
+    background-color: #0052cc;
+    color: #ffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.createButton:hover{
+    background-color: #0066ff;
+}

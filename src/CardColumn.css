@@ -1,0 +1,17 @@
+.card-header{
+    background-color: rgb(218, 218, 218);
+    box-shadow: 5px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container{
+    border: 1px;
+    border-radius: 4px;
+    background-color: rgb(218, 218, 218);
+    box-shadow: 5px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+}
