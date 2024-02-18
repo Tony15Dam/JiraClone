@@ -3,11 +3,12 @@ import './CreateCardPopup.css';
 // Created upon clicking the CREATE button, should take inputs and upon clicking this component's create button 
 // Create the JurraCard component in the card-container div
 
-const CreateCardPopup = ({ onSubmit, onClose }) => {
+const CreateCardPopup = ({ onSubmit, onClose, availableCards}) => {
     const [formData, setFormData] = useState({
       name: '',
       description: '',
       priority: '',
+      column:'',
     });
   
     const handleChange = (e) => {
@@ -30,43 +31,29 @@ const CreateCardPopup = ({ onSubmit, onClose }) => {
       <div className="popup">
         <div className="popup-content">
           <form onSubmit={handleSubmit}>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
-  
-            <label>
-              Description:
-              <input
-                type="text"
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
-  
-            <label>
-              Priority:
-              <input
-                type="text"
-                name="priority"
-                value={formData.priority}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
-  
-            <button type="submit">Create JurraCard</button>
-            <button type="button" onClick={onClose}>
-              Cancel
-            </button>
+            <div className='create-card-form-row'>
+              <label>Name: </label><input type="text" name="name" value={formData.name} onChange={handleChange}/>
+            </div>
+            <div className='create-card-form-row'>
+              <label>Description: </label><input type="Text" name="description" value={formData.description} onChange={handleChange}/>
+            </div>
+            <div className='create-card-form-row'>
+              <label>Priority: </label><input type="text" name="priority" value={formData.priority} onChange={handleChange}/>
+            </div>
+            <div className='create-card-form-row'>
+              <label>Column: </label>
+              <select name="column" value={formData.column} onChange={handleChange}>
+                {availableCards.map((option,index) =>(
+                  <option key={index} value={option.toUpperCase()}>{option.toUpperCase()}</option>
+                ))}
+              </select>
+            </div>
+            
+            
+            <div className='create-card-popup-footer'>
+            <button className='create-card-popup-footer-button' type="submit">Create</button>
+            <button className='create-card-popup-footer-button' type="button" onClick={onClose}>Cancel</button>
+            </div>
           </form>
         </div>
       </div>

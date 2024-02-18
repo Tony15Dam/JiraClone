@@ -1,0 +1,20 @@
+.kanban-card-continer{
+    width: 80;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.kanban-card-header{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.kanban-card-body{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.kanban-card-priority{
+    margin-top: 5px;
+    text-align: right;
+}
