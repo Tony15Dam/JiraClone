@@ -52,6 +52,8 @@ function App() {
      { id: 1, name: 'Task 1', description: 'Description of Task 1', priority: 'High', column: 'To Do' },
      { id: 2, name: 'Task 2', description: 'Description of Task 2', priority: 'Medium', column: 'In Progress' },
      { id: 3, name: 'Task 3', description: 'Description of Task 3', priority: 'Low', column: 'Done' },
+     { id: 4, name: 'Task 1', description: 'Description of Task 5', priority: 'High', column: 'To Do' },
+
      // Add more cards as needed
  ];
 

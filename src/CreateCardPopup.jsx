@@ -3,12 +3,12 @@ import './CreateCardPopup.css';
 // Created upon clicking the CREATE button, should take inputs and upon clicking this component's create button 
 // Create the JurraCard component in the card-container div
 
-const CreateCardPopup = ({ onSubmit, onClose, availableCards}) => {
+const CreateCardPopup = ({ onSubmit, onClose, availableCards, currentCard}) => {
     const [formData, setFormData] = useState({
       name: '',
       description: '',
       priority: '',
-      column:'',
+      column: currentCard,
     });
   
     const handleChange = (e) => {
