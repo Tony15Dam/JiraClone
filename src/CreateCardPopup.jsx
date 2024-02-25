@@ -3,12 +3,12 @@ import './CreateCardPopup.css';
 // Created upon clicking the CREATE button, should take inputs and upon clicking this component's create button 
 // Create the JurraCard component in the card-container div
 
-const CreateCardPopup = ({ onSubmit, onClose, availableCards, currentCard}) => {
+const CreateCardPopup = ({ onSubmit, onClose, availableCards,availablePriorities, currentCard}) => {
     const [formData, setFormData] = useState({
       name: '',
       description: '',
       priority: '',
-      column: currentCard,
+      column: '',
     });
   
     const handleChange = (e) => {
@@ -38,13 +38,20 @@ const CreateCardPopup = ({ onSubmit, onClose, availableCards, currentCard}) => {
               <label>Description: </label><input type="Text" name="description" value={formData.description} onChange={handleChange}/>
             </div>
             <div className='create-card-form-row'>
-              <label>Priority: </label><input type="text" name="priority" value={formData.priority} onChange={handleChange}/>
+              <label>Priority: </label>
+              <select name="priority" value={formData.priority} onChange={handleChange}>
+                <option key={0} value=''/>
+                {availablePriorities.map((option,index) =>(
+                  <option key={index+1} value={option}>{option}</option>
+                ))}
+              </select>
             </div>
             <div className='create-card-form-row'>
               <label>Column: </label>
               <select name="column" value={formData.column} onChange={handleChange}>
+                <option key={0} value=''/>
                 {availableCards.map((option,index) =>(
-                  <option key={index} value={option.toUpperCase()}>{option.toUpperCase()}</option>
+                  <option key={index+1} value={option}>{option.toUpperCase()}</option>
                 ))}
               </select>
             </div>

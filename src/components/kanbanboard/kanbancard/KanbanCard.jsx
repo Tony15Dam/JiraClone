@@ -1,12 +1,7 @@
 import React from "react";
 import './KanbanCard.css';
 
-const KanbanCard = ({ id, name, description, priority, moveCard })  =>{
-
-    const handleChangeColumn = (e) => {
-        const targetColumn = e.target.value;
-        moveCard(id, targetColumn);
-    };
+const KanbanCard = ({ id, name, description, priority }) => {
 
     return (
         <div className="kanban-card-continer">
@@ -15,7 +10,9 @@ const KanbanCard = ({ id, name, description, priority, moveCard })  =>{
             </div>
             <div>
                 <div className="kanban-card-body">{description}</div>
-                <div className="kanban-card-priority">{priority}</div>
+                <div className="kanban-card-priority">
+                    <img src={priority} alt=''/>
+                </div>
             </div>
         </div>
     );

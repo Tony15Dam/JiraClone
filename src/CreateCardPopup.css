@@ -65,6 +65,10 @@
     margin-right: 10px;
     display: inline-block;
   }
+  .create-card-form-row > select {
+    width: 57%;
+    min-width: 57%;
+  }
   .create-card-form-row > input {
     width: 50%;
   }

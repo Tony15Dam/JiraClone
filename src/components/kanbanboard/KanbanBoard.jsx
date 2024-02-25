@@ -3,7 +3,7 @@ import './KanbanBoard.css';
 import KanbanBoardColumn from './kanbanBoardColumn/KanbanBoardColumn.jsx';
 import CreateCardPopup from '../../CreateCardPopup';
 
-const KanbanBoard = ({ availableColumns, cards }) => {
+const KanbanBoard = ({ availableColumns, availablePriorities, cards }) => {
 
     
     const [cardCreationPopup, setCardCreationPopup] = useState([]);
@@ -12,13 +12,28 @@ const KanbanBoard = ({ availableColumns, cards }) => {
         return cards.filter(card => card.column === columnName);
     }
 
+    function getPriority(priority)
+{
+    priority = priority.toLowerCase();
+    switch(priority)
+    {
+        case "major":
+            console.log("major");
+            return "/Major.png";
+        case "minor":
+            return "/Minor.png";
+        default: 
+            return null;
+    }
+}
+
     const handleSubmit = (formData) =>{
         const lastCard = cards[cards.length - 1]
         const newCard = {
             id: lastCard.id + 1,
             name: formData.name,
             description: formData.description,
-            priority: formData.priority,
+            priority: getPriority(formData.priority),
             column: formData.column,
         }
         cards.push(newCard);
@@ -35,7 +50,8 @@ const KanbanBoard = ({ availableColumns, cards }) => {
             onSubmit={handleSubmit}
             onClose={handleClose}
             availableCards={availableColumns} 
-            currentCard={columnName}/>)
+            currentCard={columnName}
+            availablePriorities={availablePriorities}/>)
         console.log('Adding card to column:', columnName);
     }
 

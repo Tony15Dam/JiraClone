@@ -26,7 +26,6 @@ const KanbanBoardColumn = ({ columnName, cards, addCards }) => {
                     priority={card.priority}
                 />
             ))}
-
         </div>
     );
 };

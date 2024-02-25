@@ -39,20 +39,21 @@ function App() {
 // pass that information to the new JurraCard instance it will create
  const handleCardCreation = () =>
  {
-    setCardCreationPopup(<CreateCardPopup key = {1} onSubmit={handleSubmit} onClose={handleClose} availableCards={CardBoardColumnName()}/>)
+    setCardCreationPopup(<CreateCardPopup key = {1} onSubmit={handleSubmit} onClose={handleClose} availableCards={CardBoardColumnName()} availablePriorities={availablePriority}/>)
  }
 
  function CardBoardColumnName(){
   // Don't add more it breaks we need to found some css to add horizotal scrollbar 
   return ['MONDAY',"TUESDAY","Wednesday","Thursday"]
  }
-
+ 
+ const availablePriority = ['Major', 'Minor']
  const availableColumns = ['To Do', 'In Progress', 'Done'];
  const cards = [
-     { id: 1, name: 'Task 1', description: 'Description of Task 1', priority: 'High', column: 'To Do' },
-     { id: 2, name: 'Task 2', description: 'Description of Task 2', priority: 'Medium', column: 'In Progress' },
-     { id: 3, name: 'Task 3', description: 'Description of Task 3', priority: 'Low', column: 'Done' },
-     { id: 4, name: 'Task 1', description: 'Description of Task 5', priority: 'High', column: 'To Do' },
+     { id: 1, name: 'Task 1', description: 'Description of Task 1', priority: '/Major.png', column: 'To Do' },
+     { id: 2, name: 'Task 2', description: 'Description of Task 2', priority: '/Major.png', column: 'In Progress' },
+     { id: 3, name: 'Task 3', description: 'Description of Task 3', priority: '/Minor.png', column: 'Done' },
+     { id: 4, name: 'Task 1', description: 'Description of Task 5', priority: '/Minor.png', column: 'To Do' },
 
      // Add more cards as needed
  ];
@@ -71,7 +72,7 @@ function App() {
         {CardBoardColumnName().map((columnName) => (<CardColumn name={columnName.toUpperCase()} />))}
       </div>
       <div className='vinko-test'>
-        <KanbanBoard availableColumns={availableColumns} cards={cards} />
+        <KanbanBoard availableColumns={availableColumns} availablePriorities={availablePriority} cards={cards} />
       </div>
     </>
   );
