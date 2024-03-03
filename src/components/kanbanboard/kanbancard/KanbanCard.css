@@ -1,0 +1,40 @@
+.kanban-card-container{
+    width: 80;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.kanban-card-container > button{
+    width: 100%;
+    font-size: 15px;
+    text-align: left;
+    background-color: white;
+    color: black;
+}
+.kanban-card-header{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.kanban-card-body{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.kanban-card-priority{
+    margin-top: 5px;
+    text-align: right;
+}
+.create-card-button{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(218, 218, 218);
+    color:white;
+}
+.create-card-button:hover{
+    background-color: gray;
+    
+}
+.create-card-button > span {
+    margin-right: 20px;
+}

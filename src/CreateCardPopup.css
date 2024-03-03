@@ -12,7 +12,7 @@
   
   .popup-content {
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
@@ -39,11 +39,36 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
-  button[type="submit"] {
+
+  .create-card-popup-footer{
+    width: 100%;
+    
+  }
+  .create-card-popup-footer-button{
+    width: 40%;
     margin-right: 10px;
   }
-  
-  button[type="button"] {
+  button[type="submit"]{
+    float:left;
+  }
+  button[type="button"]{
+    float:right;
     background: #ccc;
+  }
+  .create-card-form-row{
+    display: inline-block;
+  }
+  .create-card-form-row > label {
+    width: 30%;
+    min-width: 30%;
+    text-align: left;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .create-card-form-row > select {
+    width: 57%;
+    min-width: 57%;
+  }
+  .create-card-form-row > input {
+    width: 50%;
   }

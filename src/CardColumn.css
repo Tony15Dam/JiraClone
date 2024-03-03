@@ -1,6 +1,5 @@
 .card-header{
     background-color: rgb(218, 218, 218);
-    box-shadow: 5px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,7 +9,8 @@
     border: 1px;
     border-radius: 4px;
     background-color: rgb(218, 218, 218);
-    box-shadow: 5px;
     width: 20%;
-    display: inline-block;
+    float:left;
+    text-align: center;
+    margin: 10px;
 }
